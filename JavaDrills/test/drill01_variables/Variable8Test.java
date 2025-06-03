@@ -7,15 +7,15 @@ import java.io.PrintStream;
 
 import org.junit.jupiter.api.Test;
 
-public class Variable4Test {
+public class Variable8Test {
     @Test
     public void testOutput() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
 
-        Variable4.main(null);
+        Variable8.main(null);
 
-        String expected = "false" + System.lineSeparator();
+        String expected = "山田花子" + System.lineSeparator();
         String actual = out.toString();
 
         assertEquals(expected, actual,

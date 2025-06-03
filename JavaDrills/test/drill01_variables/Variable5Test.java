@@ -15,7 +15,7 @@ public class Variable5Test {
 
         Variable5.main(null);
 
-        String expected = "山田花子" + System.lineSeparator();
+        String expected = "58.7" + System.lineSeparator();
         String actual = out.toString();
 
         assertEquals(expected, actual,

@@ -15,14 +15,14 @@ public class Variable1Test {
 
         Variable1.main(null);
 
-        String expected = "18" + System.lineSeparator();
+        String expected = "true" + System.lineSeparator();
         String actual = out.toString();
 
         assertEquals(expected, actual,
             "\n❌ 出力が正しくありません。\n" +
             "👉 期待された出力: " + expected +
             "👉 実際の出力:     " + actual + "\n" +
-            "※ printlnを使って正しくageを出力しているか確認しましょう。\n"
+            "※ 指定された変数の値を正しく println で出力してください。\n"
         );
     }
 }

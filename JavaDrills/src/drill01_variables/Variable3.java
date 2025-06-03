@@ -2,9 +2,10 @@ package drill01_variables;
 
 public class Variable3 {
     public static void main(String[] args) {
-        // 1. double型の変数 temperature を用意し、「36.5」を代入してください。
+        // 1. 文字列型の変数 name を宣言してください。
 
-        // 2. temperatureを出力してください
+        // 2. name に「太郎」を代入してください。
 
+        // 3. name を出力してください。
     }
 }
