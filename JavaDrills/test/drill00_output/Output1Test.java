@@ -26,8 +26,8 @@ public class Output1Test {
 
         assertTrue(matchNoNewline || matchWithNewline,
             "\n❌ 出力が正しくありません。\n" +
-            "👉 正しい出力: 「こんにちは、世界！」 または 改行付き（\\n）\n" +
-            "👉 実際の出力: [" + actual + "]\n" +
+            "👉 正しい出力: こんにちは、世界！ \n" +
+            "👉 実際の出力: " + actual + "\n" +
             "※ 文言のミス、余計な空白や記号がないか確認してください。\n"
         );
     }
