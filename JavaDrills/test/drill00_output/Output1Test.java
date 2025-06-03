@@ -10,22 +10,25 @@ import org.junit.jupiter.api.Test;
 public class Output1Test {
     @Test
     public void testOutput() {
-        // 標準出力をキャプチャするための準備
+        // キャプチャ設定
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
 
-        // テスト対象クラスのmainメソッドを実行
+        // 実行
         Output1.main(null);
 
-        // 改行を考慮して比較
-        String expected = "こんにちは、世界！";
+        // 出力取得
         String actual = out.toString();
 
-        // 比較し、エラーメッセージを日本語で表示
-        assertEquals(expected, actual,
-            "\n❌ 出力が正しくありません。\n " +
-            "👉 期待された出力: " + expected + "\n" +
-            "👉 実際の出力:     " + actual + "\n"
+        // 改行あり／なしの2パターンどちらか一致すればOK
+        boolean matchNoNewline = actual.equals("こんにちは、世界！");
+        boolean matchWithNewline = actual.equals("こんにちは、世界！" + System.lineSeparator()) ;
+
+        assertTrue(matchNoNewline || matchWithNewline,
+            "\n❌ 出力が正しくありません。\n" +
+            "👉 正しい出力: 「こんにちは、世界！」 または 改行付き（\\n）\n" +
+            "👉 実際の出力: [" + actual + "]\n" +
+            "※ 文言のミス、余計な空白や記号がないか確認してください。\n"
         );
     }
 }
