@@ -1,6 +1,6 @@
-package drills02_conditionals;
+package drill02_conditionals;
 
-public class If1 {
+public class If2 {
     public static void main(String[] args) {
         // 1. 整数型の変数 score を宣言し、60 を代入してください。
 
