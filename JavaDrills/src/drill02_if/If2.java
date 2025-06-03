@@ -1,4 +1,4 @@
-package drill02_conditionals;
+package drill02_if;
 
 public class If2 {
     public static void main(String[] args) {

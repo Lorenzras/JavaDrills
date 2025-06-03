@@ -1,4 +1,4 @@
-package drill02_conditionals;
+package drill02_if;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -7,7 +7,7 @@ import java.io.PrintStream;
 
 import org.junit.jupiter.api.Test;
 
-import drill02_conditionals.If2;
+import drill02_if.If2;
 
 public class If2Test {
     @Test
