@@ -1,12 +1,30 @@
 package drill03_ifelseif;
 
+/*
+ 変数 age が以下のように分類される if-else if 文を作成してください。
+分類結果を格納する変数名は result としてください。
+
+- 65 以上：「高齢者」
+- 18〜64：「成人」
+- 未満：「未成年」 
+ 
+ */
+
 public class IfElseIf2 {
-    public static void main(String[] args) {
-        // 1. 整数型の変数 score を宣言し、65 を代入してください。
-        // 2. 以下のルールで if-else if 文を使って分類し、その結果を変数 result に代入してください：
-        //    ・80点以上：「上級」
-        //    ・50点以上 80点未満：「中級」
-        //    ・50点未満：「初級」
-        // 3. result を出力してください。
-    }
+  public static void main(String[] args) {
+    int age = 23;
+    String category = "";
+
+    // ここに条件を書いてください
+
+
+
+
+
+
+
+
+
+    System.out.println(result);
+  }
 }

@@ -1,13 +1,29 @@
 package drill03_ifelseif;
 
+/*
+変数 height が以下のように分類される if-else if 文を作成してください。
+分類結果を格納する変数名は category としてください。
+
+- 180cm 以上：「高身長」
+- 160cm 以上 180cm 未満：「平均」
+- 160cm 未満：「低身長」 
+ */
+
 public class IfElseIf3 {
     public static void main(String[] args) {
-        // 1. 整数型の変数 score を宣言し、85 を代入してください。
-        // 2. 以下のルールで if-else if 文を使って分類し、その結果を変数 result に代入してください：
-        //    ・90点以上：「Sランク」
-        //    ・70点以上 90点未満：「Aランク」
-        //    ・50点以上 70点未満：「Bランク」
-        //    ・50点未満：「Cランク」
-        // 3. result を出力してください。
+        int height = 170;
+        String category = "";
+
+        // ここに条件を書いてください
+
+
+
+
+
+
+
+
+
+        System.out.println(result);
     }
 }

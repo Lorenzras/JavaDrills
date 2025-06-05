@@ -1,20 +1,18 @@
 package drill03_ifelseif;
 
-
 /*
-
 変数 score が以下のように分類される if-else if 文を作成してください。
-なお、分類結果を格納する変数名は「result」としてください。
+分類結果を格納する変数名は result としてください。
 
-- 100 点：「満点」
-- 60 点以上 100 点未満：「合格」
-- 60 点未満：「不合格」
-
+- 90 点以上：「S ランク」
+- 70 点以上 90 点未満：「A ランク」
+- 50 点以上 70 点未満：「B ランク」
+- 50 点未満：「C ランク」
  */
 
-public class IfElseIf1 {
+public class IfElseIf5 {
     public static void main(String[] args) {
-        int score = 72;
+        int score = 68;
         String result = "";
 
         // ここに条件を書いてください

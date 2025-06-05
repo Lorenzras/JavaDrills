@@ -14,12 +14,6 @@ public class If2 {
 
 
 
-
-
-
-
-
-
     System.out.println(result);
   }
 }
