@@ -1,5 +1,7 @@
 package drill03_ifelseif;
 
+
+
 public class IfElseIf1 {
     public static void main(String[] args) {
         // 1. 整数型の変数 score を宣言し、100 を代入してください。

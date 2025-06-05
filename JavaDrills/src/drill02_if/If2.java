@@ -1,9 +1,25 @@
 package drill02_if;
 
+/**
+ * 変数 age が 18 以上なら「大人」、
+ * それ以外は「未成年」と出力する if-else 文を書いてください。
+ */
+
 public class If2 {
     public static void main(String[] args) {
-        // 1. 整数型の変数 score を宣言し、60 を代入してください。
+    int score = 18;
+    String result = "";
 
-        // 2. score が 60 以上なら「合格」と出力し、そうでなければ「不合格」と出力する if-else 文を書いてください。
-    }
+    // ここに条件を書いてください
+
+
+
+
+
+
+
+
+
+    System.out.println(result);
+  }
 }
