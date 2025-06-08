@@ -9,11 +9,6 @@ public class ForContinue3 {
 	public static void main(String[] args) {
 
 		// ここにfor文を書いてください
-		for (int i = 0; i <= 10; i++) {
-			if (i % 2 == 0) {
-				continue;
-			}
-			System.out.println(i);
-		}
+
 	}
 }
