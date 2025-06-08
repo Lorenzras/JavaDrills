@@ -25,15 +25,6 @@ class DrillCodeChecker {
         return matcher.group(1);
     }
 
-    static void assertAssignment(String source, String varName, String value) {
-        Pattern pattern = Pattern.compile(varName + "\\s*=\\s*" + value + "\\s*;");
-        Matcher matcher = pattern.matcher(source);
-        assertTrue(matcher.find(),
-            "\n❌ 変数の宣言のあとに、代入（" + varName + " = " + value + ";）をしてください。\n" +
-            "💡 宣言と代入の違いを理解するために、1行にまとめず分けて書いてください。\n"
-        );
-    }
-
     static void assertPrintedVariable(String source, String varName) {
         Pattern pattern = Pattern.compile("System\\.out\\.println\\(\\s*" + varName + "\\s*\\)");
         Matcher matcher = pattern.matcher(source);
