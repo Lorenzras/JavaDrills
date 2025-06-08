@@ -8,10 +8,10 @@ package drill02_variable_initialization;
 */
 
 public class VariableInitialization1 {
-  public static void main(String[] args) {
-    // ここに書いてください
-    int year = 2025;
+	public static void main(String[] args) {
+		// ここに書いてください
+		int year = 2025;
 
-    System.out.println(year);
-  }
+		System.out.println(year);
+	}
 }
