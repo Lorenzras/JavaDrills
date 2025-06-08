@@ -1,4 +1,4 @@
-package drill01_variables;
+package drill01_variable_declaration;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -6,6 +6,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 import org.junit.jupiter.api.Test;
+
+import drill01_variable_declaration.Variable5;
 
 public class Variable5Test {
     @Test

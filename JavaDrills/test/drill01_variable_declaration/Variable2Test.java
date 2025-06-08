@@ -1,4 +1,4 @@
-package drill01_variables;
+package drill01_variable_declaration;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -7,15 +7,17 @@ import java.io.PrintStream;
 
 import org.junit.jupiter.api.Test;
 
-public class Variable3Test {
+import drill01_variable_declaration.Variable2;
+
+public class Variable2Test {
     @Test
     public void testOutput() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
 
-        Variable3.main(null);
+        Variable2.main(null);
 
-        String expected = "太郎" + System.lineSeparator();
+        String expected = "36.5" + System.lineSeparator();
         String actual = out.toString();
 
         assertEquals(expected, actual,

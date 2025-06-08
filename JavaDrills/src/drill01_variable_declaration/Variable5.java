@@ -1,5 +1,5 @@
 
-package drill01_variables;
+package drill01_variable_declaration;
 
 public class Variable5 {
 	public static void main(String[] args) {
