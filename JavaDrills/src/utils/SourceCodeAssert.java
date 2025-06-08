@@ -129,8 +129,21 @@ public class SourceCodeAssert {
 
 		try {
 			JavaRunnerUtil.compile(copied);
-			String output = JavaRunnerUtil.run(packageName, tempClassName);
-			assertEquals(expectedOutput.trim(), output.trim(), "❌ 出力が期待と一致しません。");
+			String actualOutput = JavaRunnerUtil.run(packageName, tempClassName).trim();
+			String expected = expectedOutput.trim();
+
+			if (!actualOutput.equals(expected)) {
+				String message = new StringBuilder()
+						.append("❌ 出力が期待と一致しません。\n\n")
+						.append("【期待される出力】\n")
+						.append(expected).append("\n\n")
+						.append("【実際の出力】\n")
+						.append(actualOutput).append("\n")
+						.toString();
+
+				fail(message);
+			}
+
 		} finally {
 			JavaRunnerUtil.cleanUp(copied);
 		}
