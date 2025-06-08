@@ -8,7 +8,7 @@ package drill03_ifelse;
 
 public class IfElse1 {
 	public static void main(String[] args) {
-		int score = 60;
+		int score = 60; // 値を自由に変えてみてください
 		String result = "";
 
 		// ここに条件を書いてください
