@@ -1,17 +1,18 @@
-package drill08_continue;
+package drill08_for_continue;
 
 import org.junit.jupiter.api.Test;
 
 import utils.SourceCodeAssert;
 
-public class Continue2Test {
+public class ForContinue1Test {
 
 	@Test
 	public void testOutput() throws Exception {
 		String expected = String.join(System.lineSeparator(),
 				"0",
 				"1",
-				"3",
+				"2",
+				"4",
 				"5",
 				"6",
 				"7",
