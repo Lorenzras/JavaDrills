@@ -31,6 +31,11 @@ public class Switch1Test {
         testWithValue(5, "その他の日");
     }
 
+    @Test
+    public void testSwitchUsed() throws Exception {
+        SourceCodeAssert.assertSwitchUsed(getClass());
+    }
+
     private void testWithValue(int day, String expected) throws Exception {
         SourceCodeAssert.assertOutputMatches(getClass(), "day", day, expected);
     }
