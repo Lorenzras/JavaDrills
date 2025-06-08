@@ -10,9 +10,6 @@ public class While2 {
 		int i = 0;
 
 		// ここにwhile文を書いてください
-		while (i < 3) {
-			System.out.println("★");
-			i++;
-		}
+
 	}
 }
