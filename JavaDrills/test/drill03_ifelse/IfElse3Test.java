@@ -27,6 +27,6 @@ public class IfElse3Test {
     }
 
     private void testWithValue(int num, String expected) throws Exception {
-        IfElseTestUtil.assertOutputMatches(getClass(), "num", num, expected);
+        IfElseTestUtil.assertOutputMatches(getClass(), "num", String.valueOf(num), expected);
     }
 }

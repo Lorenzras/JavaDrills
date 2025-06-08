@@ -28,6 +28,6 @@ public class IfElse1Test {
     }
 
     private void testWithValue(int score, String expected) throws Exception {
-    	IfElseTestUtil.assertOutputMatches(getClass(), "score", score, expected);
+    	IfElseTestUtil.assertOutputMatches(getClass(), "score", String.valueOf(score), expected);
     }
 }

@@ -27,6 +27,6 @@ public class IfElse2Test {
     }
 
     private void testWithValue(int age, String expected) throws Exception {
-    	IfElseTestUtil.assertOutputMatches(getClass(), "age", age, expected);
+    	IfElseTestUtil.assertOutputMatches(getClass(), "age", String.valueOf(age), expected);
     }
 }
