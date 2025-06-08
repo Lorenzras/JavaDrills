@@ -14,6 +14,20 @@ import java.util.regex.Pattern;
 public class SourceCodeAssert {
 
 	/**
+	 * if 文が使用されていることを検証します。
+	 *
+	 * @param testClass 対象のテストクラス
+	 * @throws IOException ファイル読み込みエラー
+	 */
+	public static void assertIfUsed(Class<?> testClass) throws IOException {
+		String sourcePath = TestMetaUtil.getSourcePath(testClass);
+		String source = SourceReader.readSource(sourcePath);
+		boolean hasIf = Pattern.compile("\\bif\\b").matcher(source).find();
+
+		assertTrue(hasIf, "❌ if 文を使用してください。");
+	}
+
+	/**
 	 * ソースコード内に if と else の両方が使用されていることを検証します。
 	 *
 	 * @param source 対象のソースコード（文字列）
@@ -84,6 +98,20 @@ public class SourceCodeAssert {
 	}
 
 	/**
+	 * for 文が使用されていることを検証します。
+	 *
+	 * @param testClass 対象のテストクラス
+	 * @throws IOException ファイル読み込みエラー
+	 */
+	public static void assertForUsed(Class<?> testClass) throws IOException {
+		String sourcePath = TestMetaUtil.getSourcePath(testClass);
+		String source = SourceReader.readSource(sourcePath);
+		boolean hasFor = Pattern.compile("\\bfor\\b").matcher(source).find();
+
+		assertTrue(hasFor, "❌ for 文を使用してください。");
+	}
+
+	/**
 	 * break 文が使用されていることを検証します。
 	 *
 	 * @param testClass 対象のテストクラス
@@ -98,17 +126,17 @@ public class SourceCodeAssert {
 	}
 
 	/**
-	 * if 文が使用されていることを検証します。
+	 * continue 文が使用されていることを検証します。
 	 *
 	 * @param testClass 対象のテストクラス
-	 * @throws IOException ファイル読み込みエラー
+	 * @throws IOException 読み込みエラー
 	 */
-	public static void assertIfUsed(Class<?> testClass) throws IOException {
+	public static void assertContinueUsed(Class<?> testClass) throws IOException {
 		String sourcePath = TestMetaUtil.getSourcePath(testClass);
 		String source = SourceReader.readSource(sourcePath);
-		boolean hasIf = Pattern.compile("\\bif\\b").matcher(source).find();
+		boolean hasContinue = Pattern.compile("\\bcontinue\\b").matcher(source).find();
 
-		assertTrue(hasIf, "❌ if 文を使用してください。");
+		assertTrue(hasContinue, "❌ continue 文を使用してください。");
 	}
 
 	/**
