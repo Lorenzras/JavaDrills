@@ -4,6 +4,8 @@ import java.io.IOException;
 
 import org.junit.jupiter.api.Test;
 
+import utils.SourceCodeAssert;
+
 public class IfElse4Test {
 
     @Test
@@ -23,10 +25,10 @@ public class IfElse4Test {
 
     @Test
     public void testIfElseUsed() throws IOException {
-        IfElseTestUtil.assertIfElseUsed(getClass());
+        SourceCodeAssert.assertIfElseUsed(getClass());
     }
 
     private void testWithValue(double temp, String expected) throws Exception {
-        IfElseTestUtil.assertOutputMatches(getClass(), "temperature", String.valueOf(temp), expected);
+        SourceCodeAssert.assertOutputMatches(getClass(), "temperature", String.valueOf(temp), expected);
     }
 }

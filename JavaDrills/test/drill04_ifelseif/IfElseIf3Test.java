@@ -2,6 +2,8 @@ package drill04_ifelseif;
 
 import org.junit.jupiter.api.Test;
 
+import utils.SourceCodeAssert;
+
 public class IfElseIf3Test {
 
     @Test
@@ -31,10 +33,10 @@ public class IfElseIf3Test {
 
     @Test
     public void testIfElseUsed() throws Exception {
-        IfElseTestUtil.assertIfElseUsed(getClass());
+        SourceCodeAssert.assertIfElseUsed(getClass());
     }
 
     private void testWithValue(int height, String expected) throws Exception {
-        IfElseTestUtil.assertOutputMatches(getClass(), "height", String.valueOf(height), expected);
+        SourceCodeAssert.assertOutputMatches(getClass(), "height", String.valueOf(height), expected);
     }
 }
