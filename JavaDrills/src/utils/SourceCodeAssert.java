@@ -52,6 +52,20 @@ public class SourceCodeAssert {
 	}
 
 	/**
+	 * テストクラスに対応するソースコードを読み込み、
+	 * while 文が使用されていることを検証します。
+	 *
+	 * @param testClass 対象のテストクラス
+	 * @throws IOException ファイル読み込みエラー
+	 */
+	public static void assertWhileUsed(Class<?> testClass) throws IOException {
+		final String sourcePath = TestMetaUtil.getSourcePath(testClass);
+		String source = SourceReader.readSource(sourcePath);
+		boolean hasWhile = Pattern.compile("\\bwhile\\b").matcher(source).find();
+		assertTrue(hasWhile, "❌ while 文を使用してください。");
+	}
+
+	/**
 	 * 指定した変数の値を一時的に変更してソースを実行し、期待される出力と一致するかを検証します。
 	 * すべてのプリミティブ型や文字列（String.valueOf で変換）に対応しています。
 	 *
@@ -77,6 +91,30 @@ public class SourceCodeAssert {
 			assertEquals(expected, output, variableName + " = " + value + " のとき「" + expected + "」と出力される必要があります。");
 		} finally {
 			JavaRunnerUtil.cleanUp(modified);
+		}
+	}
+
+	/**
+	 * テストクラスに対応するソースコードを実行し、出力が期待される文字列と一致するかを検証します。
+	 *
+	 * @param testClass 対象のテストクラス
+	 * @param expectedOutput 期待される出力（複数行も可）
+	 * @throws Exception コンパイルまたは実行エラー
+	 */
+	public static void assertOutputMatches(Class<?> testClass, String expectedOutput) throws Exception {
+		String className = TestMetaUtil.getBaseClassName(testClass);
+		String packageName = TestMetaUtil.getPackageName(testClass);
+		String sourcePath = TestMetaUtil.getSourcePath(testClass);
+		String tempClassName = TestMetaUtil.getTempClassName(testClass);
+
+		Path copied = SourceModifier.copyWithoutModification(sourcePath, className, tempClassName);
+
+		try {
+			JavaRunnerUtil.compile(copied);
+			String output = JavaRunnerUtil.run(packageName, tempClassName);
+			assertEquals(expectedOutput.trim(), output.trim(), "❌ 出力が期待と一致しません。");
+		} finally {
+			JavaRunnerUtil.cleanUp(copied);
 		}
 	}
 
