@@ -11,9 +11,5 @@ public class While1 {
 
 		// ここにwhile文を書いてください
 
-		while (i < 5) {
-			System.out.println("Hello!");
-			i++;
-		}
 	}
 }
