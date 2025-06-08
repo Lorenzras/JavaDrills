@@ -10,19 +10,12 @@ package drill04_ifelseif;
 */
 
 public class IfElseIf1 {
-    public static void main(String[] args) {
-        int score = 72; // 値を自由に変えてみてください
-        String result = "";
+	public static void main(String[] args) {
+		int score = 72; // 値を自由に変えてみてください
+		String result = "";
 
-        // ここに条件を書いてください
-        if (score == 100) {
-            result = "満点";
-        } else if (score >= 60) {
-            result = "合格";
-        } else {
-            result = "不合格";
-        }
+		// ここに条件を書いてください
 
-        System.out.println(result);
-    }
+		System.out.println(result);
+	}
 }
