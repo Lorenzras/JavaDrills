@@ -3,18 +3,16 @@ package drill01_variable_declaration;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import utils.SourceReader;
+
 
 class DrillCodeChecker {
 
     static String readSource(String path) throws IOException {
-        String source = new String(Files.readAllBytes(Paths.get(path)), "UTF-8");
-        return source.replaceAll("(?s)/\\*.*?\\*/", "")
-                     .replaceAll("//.*", "")
-                     .replaceAll("\\s+", " ");
+        return SourceReader.readSource(path);
     }
 
     static String findDeclaredVariable(String source, String type) {
