@@ -84,6 +84,34 @@ public class SourceCodeAssert {
 	}
 
 	/**
+	 * break 文が使用されていることを検証します。
+	 *
+	 * @param testClass 対象のテストクラス
+	 * @throws IOException ファイル読み込みエラー
+	 */
+	public static void assertBreakUsed(Class<?> testClass) throws IOException {
+		String sourcePath = TestMetaUtil.getSourcePath(testClass);
+		String source = SourceReader.readSource(sourcePath);
+		boolean hasBreak = Pattern.compile("\\bbreak\\b").matcher(source).find();
+
+		assertTrue(hasBreak, "❌ break 文を使用してください。");
+	}
+
+	/**
+	 * if 文が使用されていることを検証します。
+	 *
+	 * @param testClass 対象のテストクラス
+	 * @throws IOException ファイル読み込みエラー
+	 */
+	public static void assertIfUsed(Class<?> testClass) throws IOException {
+		String sourcePath = TestMetaUtil.getSourcePath(testClass);
+		String source = SourceReader.readSource(sourcePath);
+		boolean hasIf = Pattern.compile("\\bif\\b").matcher(source).find();
+
+		assertTrue(hasIf, "❌ if 文を使用してください。");
+	}
+
+	/**
 	 * 指定した変数の値を一時的に変更してソースを実行し、期待される出力と一致するかを検証します。
 	 * すべてのプリミティブ型や文字列（String.valueOf で変換）に対応しています。
 	 *
