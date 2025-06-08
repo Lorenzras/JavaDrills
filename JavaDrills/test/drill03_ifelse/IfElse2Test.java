@@ -4,14 +4,7 @@ import java.io.IOException;
 
 import org.junit.jupiter.api.Test;
 
-import utils.TestMetaUtil;
-
 public class IfElse2Test {
-
-    final String className = TestMetaUtil.getBaseClassName(getClass());
-    final String packageName = TestMetaUtil.getPackageName(getClass());
-    final String sourcePath = TestMetaUtil.getSourcePath(getClass());
-    //final String tempClassName = TestMetaUtil.getTempClassName(getClass());
 
     @Test
     public void testOutput17() throws Exception {
