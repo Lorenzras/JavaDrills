@@ -1,4 +1,4 @@
-package drill07_break;
+package drill07_while_break;
 
 /*
  * 整数型の変数 i を 10 まで出力する while 文を書いてください。
@@ -6,11 +6,17 @@ package drill07_break;
  * ※ 6 ～ 10 の数字は出力されません。
  */
 
-public class Break1 {
+public class WhileBreak1 {
 	public static void main(String[] args) {
 		int i = 1;
 
 		// ここにwhile文を書いてください
-
+		while (i <= 10) {
+			System.out.println(i);
+			if (i == 5) {
+				break;
+			}
+			i++;
+		}
 	}
 }

@@ -1,4 +1,4 @@
-package drill07_break;
+package drill07_while_break;
 
 /*
  * 文字列の変数 text に「★」を 1 つずつ追加しながら出力してください。
@@ -7,11 +7,17 @@ package drill07_break;
  * ヒント：文字列の比較には equals メソッドを使用してください。
  */
 
-public class Break3 {
+public class WhileBreak3 {
 	public static void main(String[] args) {
 		String text = "";
 
 		// ここにwhile文を書いてください
-
+		while (true) {
+			text += "★";
+			System.out.println(text);
+			if (text.equals("★★★★")) {
+				break;
+			}
+		}
 	}
 }

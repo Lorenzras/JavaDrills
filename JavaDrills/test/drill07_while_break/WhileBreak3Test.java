@@ -1,19 +1,18 @@
-package drill07_break;
+package drill07_while_break;
 
 import org.junit.jupiter.api.Test;
 
 import utils.SourceCodeAssert;
 
-public class Break1Test {
+public class WhileBreak3Test {
 
 	@Test
 	public void testOutput() throws Exception {
 		String expected = String.join(System.lineSeparator(),
-			"1",
-			"2",
-			"3",
-			"4",
-			"5"
+			"★",
+			"★★",
+			"★★★",
+			"★★★★"
 		);
 		SourceCodeAssert.assertOutputMatches(getClass(), expected);
 	}
