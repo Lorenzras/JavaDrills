@@ -10,19 +10,12 @@ package drill04_ifelseif;
 */
 
 public class IfElseIf3 {
-    public static void main(String[] args) {
-        int height = 170; // 値を自由に変えてみてください
-        String category = "";
+	public static void main(String[] args) {
+		int height = 170; // 値を自由に変えてみてください
+		String category = "";
 
-        // ここに条件を書いてください
-        if (height >= 180) {
-            category = "高身長";
-        } else if (height >= 160) {
-            category = "平均";
-        } else {
-            category = "低身長";
-        }
+		// ここに条件を書いてください
 
-        System.out.println(category);
-    }
+		System.out.println(category);
+	}
 }
