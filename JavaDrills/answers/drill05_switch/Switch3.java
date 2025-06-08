@@ -6,19 +6,19 @@ package drill05_switch;
 */
 
 public class Switch3 {
-  public static void main(String[] args) {
-    int number = 2; // 自由に値を変えてください
+	public static void main(String[] args) {
+		int number = 2; // 自由に値を変えてください
 
-    // ここにswitch文を書いてください
-    switch (number) {
-      case 1:
-        System.out.println("ON");
-        break;
-      case 2:
-        System.out.println("OFF");
-        break;
-      default:
-        System.out.println("UNKNOWN");
-    }
-  }
+		// ここにswitch文を書いてください
+		switch (number) {
+		case 1:
+			System.out.println("ON");
+			break;
+		case 2:
+			System.out.println("OFF");
+			break;
+		default:
+			System.out.println("UNKNOWN");
+		}
+	}
 }

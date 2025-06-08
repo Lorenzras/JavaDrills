@@ -6,22 +6,22 @@ package drill05_switch;
 */
 
 public class Switch2 {
-  public static void main(String[] args) {
-    int level = 3; // 自由に値を変えてください
+	public static void main(String[] args) {
+		int level = 3; // 自由に値を変えてください
 
-    // ここにswitch文を書いてください
-    switch (level) {
-      case 1:
-        System.out.println("初級");
-        break;
-      case 2:
-        System.out.println("中級");
-        break;
-      case 3:
-        System.out.println("上級");
-        break;
-      default:
-        System.out.println("未設定");
-    }
-  }
+		// ここにswitch文を書いてください
+		switch (level) {
+		case 1:
+			System.out.println("初級");
+			break;
+		case 2:
+			System.out.println("中級");
+			break;
+		case 3:
+			System.out.println("上級");
+			break;
+		default:
+			System.out.println("未設定");
+		}
+	}
 }
