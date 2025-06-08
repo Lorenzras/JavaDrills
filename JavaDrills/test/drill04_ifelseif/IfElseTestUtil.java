@@ -1,4 +1,4 @@
-package drill03_ifelse;
+package drill04_ifelseif;
 
 import static org.junit.jupiter.api.Assertions.*;
 
