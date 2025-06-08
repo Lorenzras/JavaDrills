@@ -29,9 +29,10 @@ public class IfElseTestUtil {
 		assertIfElseUsed(source);
 	}
 
-	public static void assertOutputMatches(Class<?> testClass, String variableName, String valueLiteral, String expected)
-
+	public static void assertOutputMatches(Class<?> testClass, String variableName, String valueLiteral,
+			String expected)
 			throws Exception {
+
 		String className = TestMetaUtil.getBaseClassName(testClass);
 		String packageName = TestMetaUtil.getPackageName(testClass);
 		String sourcePath = TestMetaUtil.getSourcePath(testClass);
@@ -43,7 +44,8 @@ public class IfElseTestUtil {
 		try {
 			JavaRunnerUtil.compile(modified);
 			String output = JavaRunnerUtil.run(packageName, tempClassName);
-			assertEquals(expected, output, variableName + " = " + valueLiteral + " のとき「" + expected + "」と出力される必要があります。");
+			assertEquals(expected, output,
+					variableName + " = " + valueLiteral + " のとき「" + expected + "」と出力される必要があります。");
 		} finally {
 			JavaRunnerUtil.cleanUp(modified);
 		}
