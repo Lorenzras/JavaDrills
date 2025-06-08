@@ -7,15 +7,14 @@ import java.io.PrintStream;
 
 import org.junit.jupiter.api.Test;
 
-import drill01_variable_declaration.Variable1;
+public class VariableDeclaration2Test {
 
-public class Variable1Test {
     @Test
     public void testOutput() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
 
-        Variable1.main(null);
+        VariableDeclaration2.main(null);
 
         String expected = "true" + System.lineSeparator();
         String actual = out.toString();
@@ -23,8 +22,17 @@ public class Variable1Test {
         assertEquals(expected, actual,
             "\n❌ 出力が正しくありません。\n" +
             "👉 期待された出力: " + expected +
-            "👉 実際の出力:     " + actual + "\n" +
-            "※ 指定された変数の値を正しく println で出力してください。\n"
+            "👉 実際の出力:     " + actual + "\n"
         );
+    }
+
+    @Test
+    public void testDeclarationAssignmentPrint() throws Exception {
+        String path = "src/drill01_variable_declaration/VariableDeclaration2.java";
+        String source = DrillCodeChecker.readSource(path);
+
+        String varName = DrillCodeChecker.findDeclaredVariable(source, "boolean");
+
+        DrillCodeChecker.assertPrintedVariable(source, varName);
     }
 }
