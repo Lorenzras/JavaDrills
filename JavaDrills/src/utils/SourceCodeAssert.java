@@ -66,6 +66,24 @@ public class SourceCodeAssert {
 	}
 
 	/**
+	 * do-while 文が正しく使用されていることを検証します。
+	 * 「do { ... } while (...)」の構文が含まれているかをチェックします。
+	 *
+	 * @param testClass 対象のテストクラス
+	 * @throws IOException 読み込みエラー
+	 */
+	public static void assertDoWhileUsed(Class<?> testClass) throws IOException {
+		String sourcePath = TestMetaUtil.getSourcePath(testClass);
+		String source = SourceReader.readSource(sourcePath);
+
+		// 正規表現: do { 任意の内容 } while (...) にマッチ
+		boolean hasDoWhile = Pattern.compile("do\\s*\\{[\\s\\S]*?\\}\\s*while\\s*\\(", Pattern.MULTILINE)
+				.matcher(source).find();
+
+		assertTrue(hasDoWhile, "❌ do-while 文を使用してください。");
+	}
+
+	/**
 	 * 指定した変数の値を一時的に変更してソースを実行し、期待される出力と一致するかを検証します。
 	 * すべてのプリミティブ型や文字列（String.valueOf で変換）に対応しています。
 	 *
