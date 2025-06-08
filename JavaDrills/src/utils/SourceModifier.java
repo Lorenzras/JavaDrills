@@ -31,7 +31,7 @@ public class SourceModifier {
     }
 
     public static String replaceVariableValue(String source, String varName, String newValue) {
-        return source.replaceAll(varName + "\\s*=\\s*[^;]+;", varName + " = " + newValue + ";");
+        return source.replaceFirst(varName + "\\s*=\\s*[^;]+;", varName + " = " + newValue + ";");
     }
 
     public static void writeToTempFile(Path path, String content) throws IOException {
