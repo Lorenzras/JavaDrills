@@ -12,5 +12,6 @@ public class IfElse2 {
 
 		// ここに条件を書いてください
 
+		System.out.println(result);
 	}
 }

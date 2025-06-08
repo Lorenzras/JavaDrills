@@ -13,5 +13,6 @@ public class IfElse1 {
 
 		// ここに条件を書いてください
 
+		System.out.println(result);
 	}
 }
