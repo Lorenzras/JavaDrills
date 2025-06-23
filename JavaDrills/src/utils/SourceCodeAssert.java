@@ -112,6 +112,34 @@ public class SourceCodeAssert {
 	}
 
 	/**
+	 * 通常の for 文（拡張 for 文ではない）が使われていることを検証します。
+	 * ※変数名や初期値などは問わない
+	 *
+	 * @param source Javaソースコード文字列
+	 */
+	public static void assertNormalForUsed(String source) {
+		// Match "for (...;...;...)" but not enhanced for "for (... : ...)"
+		boolean hasNormalFor = Pattern.compile("for\\s*\\(\\s*[^:]+;[^;]+;[^)]+\\)").matcher(source).find();
+		boolean hasEnhancedFor = Pattern.compile("for\\s*\\(\\s*[^;:]+:[^)]+\\)").matcher(source).find();
+
+		assertTrue(hasNormalFor && !hasEnhancedFor,
+				"❌ 拡張 for 文ではなく、通常の for 文（for(initial; condition; update)）を使用してください。");
+	}
+
+	/**
+	 * テストクラスに対応するソースコードを読み込み、
+	 * 通常の for 文（拡張でない）が使われていることを検証します。
+	 *
+	 * @param testClass 対象のテストクラス
+	 * @throws IOException ファイル読み込みエラー
+	 */
+	public static void assertNormalForUsed(Class<?> testClass) throws IOException {
+		final String sourcePath = TestMetaUtil.getSourcePath(testClass);
+		String source = SourceReader.readSource(sourcePath);
+		assertNormalForUsed(source);
+	}
+
+	/**
 	 * break 文が使用されていることを検証します。
 	 *
 	 * @param testClass 対象のテストクラス
